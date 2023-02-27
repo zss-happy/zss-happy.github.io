@@ -1,18 +1,20 @@
 // Import the data to customize and insert them into page
 const data = {
   "greeting": "Hi",
-  "name": "珊珊",
-  "wishText": "May the happiness always be with you! ;)",
+  "name": "珊珊姐",
+  "wishText": "May our friendship last forever^_^",
   "imagePath": "img/shanshan.png",
-  "text1": "今天是你的生日!!! :D",
-  "textInChatBox": "生日快乐！！！ 哈哈哈，祝你开开心心balabala...",
+  "text1": "我们迎来了你的27岁生日!!!:D",
+  "textInChatBox": "Hi, 姗姗姐！小王同学祝你生日快乐，新的一年要天天开心，offer多多，money多多哦！！！",
   "sendButtonLabel": "发送",
-  "text2": "我原本是打算这么做的",
-  "text3": "但是我有了一个好主意",
-  "text4": "我做了一些些许特别的事情",
+  "text2": "我冥思苦想送你什么生日礼物",
+  "text3": "终于！",
+  "text4": "我有了一个好主意",
   "text4Adjective": "且有趣",
-  "text5Entry": "因为",
-  "text5Content": "You are Special",
+  "text4-1": "看看这个网址",
+  "text4-2": "有没有发现Annabelle的名字",
+  "text5Entry": "感谢光华的相遇",
+  "text5Content": "We are such good friends!",
   "smiley": ":)",
   "bigTextPart1": "S",
   "bigTextPart2": "O",
@@ -155,6 +157,10 @@ const animationTimeline = () => {
       color: "#fff"
     })
     .to(".idea-3", 0.7, ideaTextTransLeave, "+=1.5")
+    .from(".idea-4-1", 0.7, ideaTextTrans)
+    .to(".idea-4-1", 0.7, ideaTextTransLeave, "+=1.5")
+    .from(".idea-4-2", 0.7, ideaTextTrans)
+    .to(".idea-4-2", 0.7, ideaTextTransLeave, "+=1.5")
     .from(".idea-4", 0.7, ideaTextTrans)
     .to(".idea-4", 0.7, ideaTextTransLeave, "+=1.5")
     .from(
