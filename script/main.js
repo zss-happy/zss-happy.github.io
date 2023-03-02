@@ -3,7 +3,13 @@ const data = {
   "greeting": "Hi",
   "name": "珊珊姐",
   "wishText": "May our friendship last forever^_^",
-  "imagePath": "img/shanshan.png",
+  // "imagePath": "img/shanshan.jpg",
+  "imagePath1": "img/shanshan1.jpg",
+  "imagePath2": "img/shanshan2.jpg",
+  "imagePath3": "img/shanshan3.jpg",
+  "imagePath4": "img/shanshan4.jpg",
+  "imagePath5": "img/shanshan5.jpg",
+  "imagePath6": "img/shanshan6.png",
   "text1": "我们迎来了你的27岁生日!!!:D",
   "textInChatBox": "Hi, 姗姗姐！小王同学祝你生日快乐，新的一年要天天开心，offer多多，money多多哦！！！",
   "sendButtonLabel": "发送",
@@ -21,11 +27,21 @@ const data = {
   "wishHeading": "Happy Birthday!"
 }
 
+const images = document.querySelectorAll('.picture-component img');
+let currentImage = 0;
+let interval;
+
+function changeImage() {
+  images[currentImage].classList.remove('active');
+  currentImage = (currentImage + 1) % images.length;
+  images[currentImage].classList.add('active');
+}
+
 const fetchData = () => {
   dataArr = Object.keys(data);
   dataArr.map(customData => {
     if (data[customData] !== "") {
-      if (customData === "imagePath") {
+      if (customData.startsWith("imagePath")) {
         document
           .querySelector(`[data-node-name*="${customData}"]`)
           .setAttribute("src", data[customData]);
@@ -231,7 +247,8 @@ const animationTimeline = () => {
       0.2
     )
     .from(
-      ".lydia-dp",
+      // ".lydia-dp",
+      ".picture-component",
       0.5,
       {
         scale: 3.5,
@@ -242,12 +259,6 @@ const animationTimeline = () => {
       },
       "-=2"
     )
-    .from(".hat", 0.5, {
-      x: -100,
-      y: 350,
-      rotation: -180,
-      opacity: 0
-    })
     .staggerFrom(
       ".wish-hbd span",
       0.7,
@@ -294,16 +305,16 @@ const animationTimeline = () => {
         visibility: "visible",
         opacity: 0,
         scale: 80,
-        repeat: 3,
+        repeat: -1,
         repeatDelay: 1.4
       },
       0.3
     )
-  // .to(".six", 0.5, {
-  //   opacity: 0,
-  //   y: 30,
-  //   zIndex: "-1"
-  // })
+  .to(".six", 0.5, {
+    opacity: 100,
+    y: 30,
+    // zIndex: "-1"
+  })
   // .staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
   // .to(
   //   ".last-smile",
@@ -322,6 +333,11 @@ const animationTimeline = () => {
   // replyBtn.addEventListener("click", () => {
   //   tl.restart();
   // });
+
+  setTimeout(() => {
+    changeImage()
+    interval = setInterval(changeImage, 3000)
+  }, 22000)
 };
 
 // Run fetch and animation in sequence
