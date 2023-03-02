@@ -11,7 +11,7 @@ const data = {
   "imagePath5": "img/shanshan5.jpg",
   "imagePath6": "img/shanshan6.png",
   "text1": "我们迎来了你的27岁生日!!!:D",
-  "textInChatBox": "Hi, 姗姗姐！小王同学祝你生日快乐，新的一年要天天开心，offer多多，money多多哦！！！",
+  "textInChatBox": "Hi, 珊珊姐！小王同学祝你生日快乐，新的一年要天天开心，offer多多，money多多哦！！！",
   "sendButtonLabel": "发送",
   "text2": "我冥思苦想送你什么生日礼物",
   "text3": "终于！",
